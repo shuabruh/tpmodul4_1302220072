@@ -1,6 +1,4 @@
-﻿
-
-public enum KELURAHAN
+﻿public enum KELURAHAN
 {
     BATUNANGGAL,
     KUJANGSARI,
