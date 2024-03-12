@@ -49,6 +49,22 @@ public class KodePos
         return kodePos[(int)kelurahan];
     }
 }
+
+public class Shifts
+{
+    public DOORSTATES initDoorState;
+    public DOORSTATES finalDoorState;
+    public DOORTRIGGERS trigger;
+
+    public Shifts(DOORSTATES initDoorState, DOORSTATES finalDoorState, DOORTRIGGERS trigger)
+    {
+        this.initDoorState = initDoorState;
+        this.finalDoorState = finalDoorState;
+        this.trigger = trigger;
+    }
+
+}
+
 public class DoorMachine
 {
     public DOORSTATES current;
@@ -60,8 +76,8 @@ public class DoorMachine
 
     Shifts[] Transitions =
     {
-            new Shifts(DOORSTATES.TERBUKA, DOORSTATES.TERKUNCI, DOORTRIGGERS.KunciPintu),
-            new Shifts(DOORSTATES.TERKUNCI, DOORSTATES.TERBUKA, DOORTRIGGERS.BukaPintu),
+        new Shifts(DOORSTATES.TERBUKA, DOORSTATES.TERKUNCI, DOORTRIGGERS.KunciPintu),
+        new Shifts(DOORSTATES.TERKUNCI, DOORSTATES.TERBUKA, DOORTRIGGERS.BukaPintu),
     };
 
     public DOORSTATES NextState(DOORSTATES initState, DOORTRIGGERS trigger)
@@ -101,19 +117,4 @@ public class DoorMachine
             Console.WriteLine("Pintu terbuka");
         }
     }
-}
-
-public class Shifts
-{
-    public DOORSTATES initDoorState;
-    public DOORSTATES finalDoorState;
-    public DOORTRIGGERS trigger;
-
-    public Shifts(DOORSTATES initDoorState, DOORSTATES finalDoorState, DOORTRIGGERS trigger)
-    {
-        this.initDoorState = initDoorState;
-        this.finalDoorState = finalDoorState;
-        this.trigger = trigger;
-    }
-
 }
