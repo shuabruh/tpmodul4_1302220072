@@ -38,7 +38,6 @@ internal class Program
         pintu.Action(DOORTRIGGERS.BukaPintu);
         pintu.Action(DOORTRIGGERS.KunciPintu);
         pintu.Action(DOORTRIGGERS.KunciPintu);
-        Console.WriteLine("Pintu sudah " + pintu.current);
     }
 }
 
